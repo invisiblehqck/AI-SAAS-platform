@@ -1,5 +1,8 @@
 🚀 AI SaaS Platform
 
+
+![AI-SAAS-platform](preview.png)
+
 ✨ AI SaaS Platform is a production-ready, scalable Software-as-a-Service application powered by Artificial Intelligence.
 It is designed to automate processes, deliver intelligent insights, and provide a seamless user experience using modern cloud-native architecture.
 
