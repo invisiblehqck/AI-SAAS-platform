@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from "react";
+import { Gem, Sparkles } from "lucide-react";
+import { Protect, useAuth } from "@clerk/clerk-react";
+import CreationItem from "../components/CreationItem";
+import axios from "axios";
+=======
 import React from "react";
 import { useState, useEffect } from "react";
 import { Gem, Sparkle, Sparkles } from "lucide-react";
@@ -5,6 +12,7 @@ import { Protect } from "@clerk/clerk-react";
 import CreationItem from "../components/Creationitem";
 import axios from "axios";
 import { useAuth } from "@clerk/clerk-react";
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
 import toast from "react-hot-toast";
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
@@ -21,15 +29,27 @@ const Dashboard = () => {
           Authorization: `Bearer ${await fetchToken()}`,
         },
       });
+<<<<<<< HEAD
+
+      if (data.success) {
+        setCreations(Array.isArray(data.creations) ? data.creations : []);
+=======
       if (data.success) {
         setCreations(data.creations);
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
       } else {
         toast.error(data.message);
       }
     } catch (error) {
       toast.error(error.message);
+<<<<<<< HEAD
+    } finally {
+      setLoading(false);
+    }
+=======
     }
     setLoading(false);
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
   };
 
   useEffect(() => {
@@ -48,7 +68,11 @@ const Dashboard = () => {
             <Sparkles className="w-5 text-white" />
           </div>
         </div>
+<<<<<<< HEAD
+
+=======
         {/* Active plan card */}
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
         <div className="flex justify-between items-center w-72 p-4 px-6 bg-white rounded-xl border border-gray-200">
           <div className="text-slate-600">
             <p className="text-sm">Active plan</p>
@@ -65,6 +89,22 @@ const Dashboard = () => {
       </div>
 
       {loading ? (
+<<<<<<< HEAD
+        <div className="flex items-center justify-center h-3/4">
+          <div className="animate-spin rounded-full h-11 w-11 border-4 border-purple-500 border-t-transparent"></div>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          <p className="mt-6 mb-4">Recent Creations</p>
+
+          {creations.length > 0 ? (
+            creations
+              .filter(Boolean)
+              .map((item) => <CreationItem key={item.id} item={item} />)
+          ) : (
+            <p className="text-slate-500">No creations found.</p>
+          )}
+=======
         CreationItem(
           <div className="flex items-center justify-center h-3/4">
             <div className="animate-spin rounded-full h-11 w-11 border-3 border-purple-500 border-t-transparent"></div>
@@ -76,6 +116,7 @@ const Dashboard = () => {
           {creations.map((item) => (
             <CreationItem key={item.id} item={item} />
           ))}
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
         </div>
       )}
     </div>

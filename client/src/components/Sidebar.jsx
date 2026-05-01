@@ -41,6 +41,10 @@ const Sidebar = ({ sidebar, setSidebar }) => {
           className="w-14 mx-auto rounded-full"
         />
         <h1 className="mt-1 text-center">{user.fullName}</h1>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
         <div className="px-6 mt-5 text-sm text-gray-600 font-medium">
           {navItems.map(({ to, label, Icon }) => (
             <NavLink
@@ -49,8 +53,12 @@ const Sidebar = ({ sidebar, setSidebar }) => {
               end={to === "/ai"}
               onClick={() => setSidebar(false)}
               className={({ isActive }) =>
+<<<<<<< HEAD
+                `px-3.5 py-2.5 flex items-center gap-3 rounded transition ${
+=======
                 `px-3.5 py-2.5 flex items-center gap-3 rounded transition
                 ${
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
                   isActive
                     ? "bg-gradient-to-r from-[#3C81F6] to-[#9234EA] text-white"
                     : "text-gray-700"
@@ -58,16 +66,39 @@ const Sidebar = ({ sidebar, setSidebar }) => {
               }
             >
               <Icon className="w-5 h-5" />
+<<<<<<< HEAD
+              <span>{label}</span>
+=======
               {label}
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
             </NavLink>
           ))}
         </div>
       </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
       <div className="w-full border-t border-gray-200 p-4 px-7 flex items-center justify-between">
         <div
           onClick={openUserProfile}
           className="flex gap-2 items-center cursor-pointer"
         >
+<<<<<<< HEAD
+          <img
+            src={user.imageUrl}
+            alt="User avatar"
+            className="w-8 rounded-full"
+          />
+          <div>
+            <h1>{user.fullName}</h1>
+            <p className="text-xs text-gray-500">
+              {user?.publicMetadata?.plan === "premium" ? "Premium" : "Free"}
+            </p>
+          </div>
+        </div>
+
+=======
           <img src={user.imageUrl} alt="" className="w-8 rounded-full" />
           <div>
             <h1>{user.fullName}</h1>
@@ -78,6 +109,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
             </p>
           </div>
         </div>
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
         <LogOut
           onClick={signOut}
           className="w-5 h-5 text-gray-400 hover:text-gray-700 transition cursor-pointer"
