@@ -5,7 +5,10 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+<<<<<<< HEAD
     "dev": "nodemon server.js",
+=======
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
     "server": "nodemon server.js",
     "start": "node server.js"
   },
@@ -14,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@clerk/express": "^1.7.13",
+<<<<<<< HEAD
     "@google/genai": "^1.50.1",
     "@neondatabase/serverless": "^1.0.1",
     "axios": "^1.15.0",
@@ -22,6 +26,16 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "multer": "^2.0.2",
+=======
+    "@neondatabase/serverless": "^1.0.1",
+    "axios": "^1.11.0",
+    "cloudinary": "^2.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "openai": "^5.10.2",
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
     "pdf-parse": "^1.1.1"
   },
   "devDependencies": {

@@ -1,9 +1,18 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { Sparkles, Image as ImageIcon } from "lucide-react";
+=======
+import { Sparkles, Image, Hash } from "lucide-react";
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
 import axios from "axios";
 import { useAuth } from "@clerk/clerk-react";
 import toast from "react-hot-toast";
 
+<<<<<<< HEAD
+=======
+axios;
+
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
 const GenerateImages = () => {
   const imageStyle = [
     "Realistic",
@@ -26,6 +35,7 @@ const GenerateImages = () => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
 
     try {
       setLoading(true);
@@ -62,16 +72,53 @@ const GenerateImages = () => {
 
   return (
     <div className="h-full overflow-y-scroll p-6 flex items-start flex-wrap gap-4 text-slate-700">
+=======
+    try {
+      setLoading(true);
+      const prompt = `Generate an image of ${input} in the style of ${selectedStyle}`;
+      const { data } = await axios.post(
+        "/api/ai/generate-image",
+        {
+          prompt,
+          publish,
+        },
+        {
+          headers: { Authorization: `Bearer ${await getToken()}` },
+        }
+      );
+      if (data.success) {
+        setContent(data.content);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+    setLoading(false);
+  };
+
+  return (
+    <div className="h-full overflow-y-scroll p-6 flex  items-start flex-wrap gap-4 text-slate-700">
+      {/* Left column */}
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
       <form
         onSubmit={onSubmitHandler}
         className="flex-1 max-w-lg p-4 bg-white rounded-lg border border-gray-200"
       >
+<<<<<<< HEAD
         <div className="flex items-center gap-3">
+=======
+        <div className="flex items-center gap-3 ">
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
           <Sparkles className="w-6 text-[#00AD25]" />
           <h1 className="text-xl font-semibold">AI Image Generator</h1>
         </div>
 
+<<<<<<< HEAD
         <p className="mt-6 text-sm font-medium">Describe Your Image</p>
+=======
+        <p className=" mt-6 text-sm font-medium">Describe Your Image</p>
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
 
         <textarea
           onChange={(e) => setInput(e.target.value)}
@@ -82,16 +129,27 @@ const GenerateImages = () => {
           required
         />
 
+<<<<<<< HEAD
         <p className="mt-4 text-sm font-medium">Style</p>
 
         <div className="mt-3 flex gap-3 flex-wrap">
+=======
+        <p className="mt-4 text-sm font-medium">style</p>
+
+        <div className="mt-3 flex gap-3 flex-wrap sm:max-w-9/11">
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
           {imageStyle.map((item) => (
             <span
               key={item}
               className={`cursor-pointer px-4 py-1 border rounded-full text-xs ${
                 selectedStyle === item
+<<<<<<< HEAD
                   ? "bg-green-50 text-green-700 border-green-300"
                   : "border-gray-300 text-gray-600"
+=======
+                  ? "bg-green-50 text-green-700"
+                  : "border-gray-500 text-gray-300"
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
               }`}
               onClick={() => setSelectedStyle(item)}
             >
@@ -109,6 +167,10 @@ const GenerateImages = () => {
               className="sr-only peer"
             />
             <div className="w-9 h-5 bg-slate-300 rounded-full peer-checked:bg-green-500 transition"></div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
             <span className="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition peer-checked:translate-x-4"></span>
           </label>
 
@@ -116,38 +178,65 @@ const GenerateImages = () => {
         </div>
 
         <button
+<<<<<<< HEAD
           type="submit"
           disabled={loading}
           className="w-full mt-6 flex items-center justify-center gap-2 px-4 py-2 text-sm bg-gradient-to-r from-[#00AD25] to-[#04FF50] text-white rounded-lg disabled:opacity-70"
+=======
+          disabled={loading}
+          className="w-full mt-6 flex items-center justify-center gap-2 px-4 py-2 text-sm bg-gradient-to-r from-[#00AD25] to-[#04FF50] text-white rounded-lg cursor-pointer"
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
         >
           {loading ? (
             <span className="w-4 h-4 my-1 rounded-full border-2 border-t-transparent animate-spin"></span>
           ) : (
+<<<<<<< HEAD
             <ImageIcon className="w-5" />
+=======
+            <Image className="w-5" />
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
           )}
           Generate Image
         </button>
       </form>
+<<<<<<< HEAD
 
       <div className="w-full max-w-lg p-4 bg-white rounded-lg flex flex-col border border-gray-200 min-h-96">
         <div className="flex items-center gap-3 mb-3">
           <ImageIcon className="w-5 h-5 text-[#00AD25]" />
+=======
+      <div className="w-full max-w-lg p-4 bg-white rounded-lg flex flex-col  border border-gray-200 min-h-96">
+        <div className="flex items-center gap-3 mb-3">
+          <Image className="w-5 h-5 text-[#00AD25]" />
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
           <h1 className="text-xl font-semibold">Generated Image</h1>
         </div>
 
         {!content ? (
           <div className="flex-1 flex justify-center items-center">
             <div className="text-sm flex flex-col items-center gap-5 text-gray-400">
+<<<<<<< HEAD
               <ImageIcon className="w-9 h-9" />
               <p>Enter a topic and click "Generate Image" to get started</p>
+=======
+              <Image className="w-9 h-9" />
+              <p>Enter a Topic and Click "Generate Image" to get started</p>
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
             </div>
           </div>
         ) : (
           <div className="mt-3 h-full">
+<<<<<<< HEAD
             <img
               src={content}
               alt="Generated image"
               className="w-full h-full object-contain rounded-lg"
+=======
+            <Image
+              src={content}
+              alt="Generated image"
+              className="w-full h-full object-contain"
+>>>>>>> 6316eab6093acb8b4ff44c1ebf38d1c0c4f0b1de
             />
           </div>
         )}
